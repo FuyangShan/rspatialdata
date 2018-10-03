@@ -1,13 +1,16 @@
-# Spatial Data Analysis with R, Spring 2018
+# Spatial Data Analysis with R, Fall 2018
 
 ## Schedule at a Glance
 
-April 19. Introduction to R and Data Wrangling
+Oct. 4. Introduction to R
 
-April 26. Spatial Data Classes, Importing and Exporting Data, Intro to Visualization
+Oct. 11. Manipulating Geospatial Data
 
-May 3. Spatial Queries, Joins, and Geoprocessing
+Oct. 25. Automation, Spatial Queries, and Raster Data
 
-May 10. Intro to Spatial Analyses
+Nov. 1. Using APIs for Geocoding and Visualization
 
+Nov. 8. Spatial Stats & R-ArcGIS integration
 
+Slides & exercises at: 
+https://ajlyons.github.io/rspatialdata/
