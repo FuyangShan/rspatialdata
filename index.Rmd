@@ -1,0 +1,136 @@
+---
+title: "<span class='ex-title'>Spatial Data Analysis with R:</span><br/><span class='ex-subtitle'>Outline</span>"
+output: 
+  html_document: 
+    css: css/slidy_styles.css
+    self_contained: no
+    lib_dir: docs/exercises/lib
+    smart: no
+    includes:
+      in_header: common/header.html
+params:
+   show_details: !r c(TRUE, FALSE, FALSE, FALSE, FALSE)
+
+---
+<style>
+h1 {
+  font-size: 130%;
+}
+</style>
+
+```{r include=FALSE}
+load('common/course_info.RData')
+source('common/auton_chop.R')
+```
+
+<p style="font-size:150%; font-family:monospace;"><br/>`r lstCI$githuburl`</p>
+<p style="font-size:130%;">`r load('common/course_info.RData'); lstCI$course`</p>
+
+<div class="hrleft"></div>
+# `r lstCI$class01short`. Introduction to R  
+
+```{r week01, results="asis", echo=FALSE}
+if (params$show_details[1]) {
+  cat(toc_link("Intro", "part01a_intro.html", "slides", T))
+  
+  cat(toc_link("R Syntax", "part01b_rsyntax.html", "slides", T))
+  
+  cat(toc_link("Exercise 1: Basic Operations", "ex01_basicr.html", "exercises", T))
+  
+  cat(toc_link("Working with Packages", "part01c_packages.html", "slides", T))
+  
+  cat(toc_link("Exercise 2: Packages", "ex02_packages.html", "exercises", T))
+  
+  cat(toc_link("Importing and Plotting Spatial Data", "part01d_import_plot.html", "slides", T))
+  
+  cat(toc_link("Exercise 3: Import and Plot Data", "ex03_import_plot.html", "exercises", T))
+}
+```
+
+<div class="hrleft"></div>
+# `r lstCI$class02short`. `r lstCI$class02titleshort`
+
+```{r week02, results="asis", echo=FALSE}
+if (params$show_details[2]) {
+  cat(toc_link("Review from Last Time", "part02a_review.html", "slides", FALSE))
+  
+  cat(toc_link("More R Fundamentals", "part02b_sort-save-misc.html", "slides", FALSE))
+  
+  cat(toc_link("Exercise 4: Lists, Sorting and Saving Data", "ex04_sort-save-misc.html", "exercises", FALSE))
+  
+  cat(toc_link("Matrices and data frames", "part02c_2d-data.html", "slides", FALSE))
+  
+  cat(toc_link("Exercise 5: Working with Data Frames", "ex05_dataframes.html", "exercises", FALSE))
+  
+  cat(toc_link("R Markdown", "part02d_rmarkdown.html", "slides", FALSE))
+  
+  cat(toc_link("Spatial Data Basic Operations", "part02e_spatial-data.html", "slides", FALSE))
+  
+  cat(toc_link("Exercise 6: Spatial Data Operations", "ex06_spatial-data-ops.html", "exercises", FALSE))
+  
+  cat(toc_link("Geoprocessing", "part02f_geoprocessing.html", "slides", FALSE))
+  
+  cat(toc_link("Exercise 7: Geoprocessing", "ex07_geoprocessing.html", "exercises", FALSE))
+}
+```
+
+<div class="hrleft"></div>
+# `r lstCI$class03short`. `r lstCI$class03titleshort`
+
+```{r week03, results="asis", echo=FALSE}
+if (params$show_details[3]) {
+  cat(toc_link("Control Structures", "part03a_control-structures.html", "slides"))
+  cat(toc_link("Exercise 8: Loops and Branches", "ex08_loops-branches.html", "exercises"))
+  cat(toc_link("Spatial Queries", "part03b_spatial-queries.html", "slides"))
+  cat(toc_link("Exercise 9: Spatial Queries", "ex09_spatial-queries.html", "exercises"))
+  cat(toc_link("Raster Data Pt. 1. Importing and Basic Processing", "part03c_raster-pt1.html", "slides"))
+  cat(toc_link("Exercise 10: Importing Raster Data", "ex10_raster01.html", "exercises"))
+  cat(toc_link("Raster Data Pt. 2. Derived Rasters", "part03d_raster-pt2.html", "slides"))
+  cat(toc_link("Exercise 11: Derived Data", "ex11_raster02.html", "exercises"))
+}
+```
+
+<div class="hrleft"></div>
+# `r lstCI$class04short`. `r lstCI$class04titleshort`
+
+```{r week04, results="asis", echo=FALSE}
+if (params$show_details[4]) {
+  cat(toc_link("Custom functions", "part04a_custom-functions.html", "slides"))
+  cat(toc_link("Working with online data", "part04b_online-data.html", "slides"))
+  cat(toc_link("Geocoding", "part04c_geocoding.html", "slides"))
+  cat(toc_link("Exercise 12: Geocoding", "ex12_geocoding.html", "exercises"))
+  cat(toc_link("ggmap and leaflet", "part04d_ggmap_leaflet.html", "slides"))
+}
+```
+
+<div class="hrleft"></div>
+# `r lstCI$class05short`. `r lstCI$class05titleshort`
+
+```{r week05, results="asis", echo=FALSE}
+if (params$show_details[5]) {
+  cat(toc_link("Working with Statistical Models", "part04e_models.html", "slides"))
+  cat(toc_link("Spatial Stats", "part04f_spatial-stats.html", "slides"))
+  cat(toc_link("R-ArcGIS Bridge", "part04g_arcgisbridge.html", "slides"))
+}
+```
+
+<div class="hrleft"></div>
+# Resources
+
+<div style="font-size:120%; margin-bottom:2em;">
+* [Other Resources](slides/resources.html){target="_blank"}
+
+* Cheatsheets
+
+    + [General R](extras/general-r_cheatsheet_animove.pdf)
+    + [Data Management](extras/data-management_cheatsheet.pdf)
+    + [R Color palettes](extras/color-palette_cheatsheet.pdf)
+    + [spatial operations](extras/spatial-commands_cheatsheet_animove_2014-05-11.pdf)
+    + [coordinate reference systems](extras/coordinate-ref-systems_overview.pdf)
+    + [remote sensing & GIS functions](extras/RS_ecology_refcard.pdf)
+    + [ArcGIS equivalents in R](extras/arcgis_to_r_spatial_cheatsheet.pdf)
+    + [ggmap quickstart](extras/ggmap_cheatsheet.pdf)  
+  
+* [Workshop Etherpad](https://public.etherpad-mozilla.org/p/rspatial-baygeo-f18){target="_blank"}
+
+</div>

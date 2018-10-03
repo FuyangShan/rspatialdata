@@ -1,0 +1,83 @@
+---
+title: "Outline"
+output: html_document
+---
+
+```{r include=FALSE}
+load('../common/course_info.RData')
+```
+
+<!------- WEEK 01 ---------------------------------------->
+<span class="tritoggle" id="tri01span" onclick="TriShowHide('tri01');return false;">`r if (1 %in% params$this_week) "&#9660;" else "&#9654;"` </span><span class="sessiontitle" onclick="TriShowHide('tri01');return false;">`r lstCI$class01short`. `r lstCI$class01titlelong`</span>
+
+<div id="tri01div" style="display:`r if (1 %in% params$this_week) "block" else "none"`;" class="compact">
+
+```{r week01, results="asis", echo=FALSE}
+cat("<ul>\n")
+for (topic in lstCI$class01topics) {
+  cat("<li>", topic, "</li>\n", sep="")
+}
+cat("</ul>\n")
+```
+
+</div>
+
+<!-------- WEEK 02 --------------------------------------->
+<span class="tritoggle" id="zeroryspan" onclick="TriShowHide('zerory');return false;">`r if (2 %in% params$this_week) "&#9660;" else "&#9654;"` </span><span class="sessiontitle" onclick="TriShowHide('zerory');return false;">`r lstCI$class02short`. `r lstCI$class02titlelong`</span>
+                              
+<div id="zerorydiv" style="display:`r if (2 %in% params$this_week) "block" else "none"`;" class="compact">
+
+```{r week02, results="asis", echo=FALSE}
+cat("<ul>\n")
+for (topic in lstCI$class02topics) {
+  cat("<li>", topic, "</li>\n", sep="")
+}
+cat("</ul>\n")
+```
+
+</div>
+
+<!--------- WEEK 03 -------------------------------------->
+<span class="tritoggle" id="icosxkspan" onclick="TriShowHide('icosxk');return false;">`r if (3 %in% params$this_week) "&#9660;" else "&#9654;"` </span><span class="sessiontitle" onclick="TriShowHide('icosxk');return false;">`r lstCI$class03short`. `r lstCI$class03titlelong`</span>
+
+<div id="icosxkdiv" style="display:`r if (3 %in% params$this_week) "block" else "none"`;" class="compact">
+
+```{r week03, results="asis", echo=FALSE}
+cat("<ul>\n")
+for (topic in lstCI$class03topics) {
+  cat("<li>", topic, "</li>\n", sep="")
+}
+cat("</ul>\n")
+```
+
+</div>
+
+<!---------- WEEK 04 ------------------------------------->
+<span class="tritoggle" id="iadcpnspan" onclick="TriShowHide('iadcpn');return false;">`r if (4 %in% params$this_week) "&#9660;" else "&#9654;"` </span><span class="sessiontitle" onclick="TriShowHide('iadcpn');return false;">`r lstCI$class04short`. `r lstCI$class04titlelong`</span>
+
+<div id="iadcpndiv" class="compact" style="display:`r if (4 %in% params$this_week) "block" else "none"`;">
+
+```{r week04, results="asis", echo=FALSE}
+cat("<ul>\n")
+for (topic in lstCI$class04topics) {
+  cat("<li>", topic, "</li>\n", sep="")
+}
+cat("</ul>\n")
+```
+
+</div>
+
+<!---------- WEEK 05 ------------------------------------->
+<span class="tritoggle" id="hiadcpnspan" onclick="TriShowHide('hiadcpn');return false;">`r if (5 %in% params$this_week) "&#9660;" else "&#9654;"` </span><span class="sessiontitle" onclick="TriShowHide('hiadcpn');return false;">`r lstCI$class05short`. `r lstCI$class05titlelong`</span>
+
+<div id="hiadcpndiv" class="compact" style="display:`r if (5 %in% params$this_week) "block" else "none"`;">
+
+```{r week05, results="asis", echo=FALSE}
+cat("<ul>\n")
+for (topic in lstCI$class05topics) {
+  cat("<li>", topic, "</li>\n", sep="")
+}
+cat("</ul>\n")
+```
+
+</div>
