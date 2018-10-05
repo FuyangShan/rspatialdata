@@ -1,8 +1,10 @@
 ---
-title: "<span class='ex-title'>Spatial Analysis with R</span><br/><span class='ex-subtitle'>Exercise 2: Finding and Installing Packages</span>"
-date: "`r load('../common/course_info.RData'); lstCI$course`"
+title: "<span class='ex-title'>`r load('../common/course_info.RData'); lstCI$course_title`</span><br/><span class='ex-subtitle'>Exercise 2: Finding and Installing Packages</span>"
+date: "`r lstCI$course_sub`"
 output: html_document
 ---
+
+
 
 The key to working effectively in R is finding and installing the right packages. For spatial data, some of the most common and useful packages include:
 

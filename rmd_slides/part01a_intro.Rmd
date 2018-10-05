@@ -1,5 +1,5 @@
 ---
-title: "<span class='pres-date'>Week `r params$this_week`: </span><br/><span class='pres-subtitle'>Spatial Data Analysis with R</span> <br/><span class='pres-date'>`r load('../common/course_info.RData'); lstCI[[paste0('class0', params$this_week)]]`</span>"
+title: "<span class='pres-date'>Week `r params$this_week`: </span><br/><span class='pres-subtitle'>`r load('../common/course_info.RData'); lstCI$course_title`</span> <br/><span class='pres-date'>`r lstCI[[paste0('class0', params$this_week)]]`</span>"
 author: "<span class='pres-title'>Intro</span>"
 output: 
   slidy_presentation:
@@ -56,27 +56,14 @@ Get better at:
 <span style="color:darkred;">Wind up a little higher on the learning curve!</span>
 </div>
 
-
 # Course Materials
 
-Etherpad: <https://is.gd/rspatial_baygeo_s18>
+Etherpad: <`r lstCI$etherpadshort`>
 
-GitHub website: <https://github.com/ajlyons/rspatialdata>
+Slides and exercises: <`r lstCI$githuburl`>
 
-<div class="indented1">
-- slides (HTML)
-- exercises (HTML)
-</div>
-
-Github repository: <https://github.com/ajlyons/rspatialdata>
-
-<div class="indented1">
-- download as zip
-- extract to *My Documents\\RClass\\*
-</div>
-
-Keyboard shortcuts for these slides
-
+<div class="indented2">
+Keyboard shortcuts for slides:
 <div class="indented2">
 A: toggle display of current vs all slides  
 S: make fonts smaller  
@@ -84,6 +71,16 @@ B: make fonts larger
 F: toggle display of the footer  
 C: Show table of contents
 </div>
+</div>
+
+Data for exercises: <`r lstCI$githubdata`>
+
+<div class="indented1">
+- download as zip
+- extract to *My Documents\\*
+</div>
+
+Github repository: <`r lstCI$githubrepo`>
 
 # Exercises
 

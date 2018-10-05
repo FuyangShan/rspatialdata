@@ -1,6 +1,6 @@
 ---
-title: "<span class='ex-title'>Spatial Analysis with R</span><br/><span class='ex-subtitle'>Exercise 1: Basic R Operations</span>"
-date: "`r load('../common/course_info.RData'); lstCI$course`"
+title: "<span class='ex-title'>`r load('../common/course_info.RData'); lstCI$course_title`</span><br/><span class='ex-subtitle'>Exercise 1: Basic R Operations</span>"
+date: "`r lstCI$course_sub`"
 output: html_document
 ---
 

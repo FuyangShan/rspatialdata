@@ -1,5 +1,5 @@
 ---
-title: "<span class='ex-title'>Spatial Data Analysis with R:</span><br/><span class='ex-subtitle'>Outline</span>"
+title: "<span class='ex-title'>`r load('common/course_info.RData'); lstCI$course_title`</span><br/><span class='ex-subtitle'>Outline</span>"
 output: 
   html_document: 
     css: css/slidy_styles.css
@@ -23,8 +23,9 @@ load('common/course_info.RData')
 source('common/auton_chop.R')
 ```
 
+<p style="font-size:150%;">`r lstCI$course_sub`</p>
+
 <p style="font-size:150%; font-family:monospace;"><br/>`r lstCI$githuburl`</p>
-<p style="font-size:130%;">`r load('common/course_info.RData'); lstCI$course`</p>
 
 <div class="hrleft"></div>
 # `r lstCI$class01short`. Introduction to R  
@@ -44,6 +45,9 @@ if (params$show_details[1]) {
   cat(toc_link("Importing and Plotting Spatial Data", "part01d_import_plot.html", "slides", T))
   
   cat(toc_link("Exercise 3: Import and Plot Data", "ex03_import_plot.html", "exercises", T))
+  
+  cat(toc_link("Converting a CSV to SpatialPoints", "part01e_csv2shp.html", "slides", T))
+  
 }
 ```
 
@@ -129,8 +133,11 @@ if (params$show_details[5]) {
     + [coordinate reference systems](extras/coordinate-ref-systems_overview.pdf)
     + [remote sensing & GIS functions](extras/RS_ecology_refcard.pdf)
     + [ArcGIS equivalents in R](extras/arcgis_to_r_spatial_cheatsheet.pdf)
-    + [ggmap quickstart](extras/ggmap_cheatsheet.pdf)  
-  
-* [Workshop Etherpad](https://public.etherpad-mozilla.org/p/rspatial-baygeo-f18){target="_blank"}
+    + [ggmap quickstart](extras/ggmap_cheatsheet.pdf)
+
+# Workshop Etherpad
+
+* [`r lstCI$etherpadshort`](`r lstCI$etherpadshort`){target="_blank"}
+
 
 </div>

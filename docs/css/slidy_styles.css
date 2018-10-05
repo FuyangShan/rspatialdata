@@ -151,6 +151,9 @@ a.showhidelink {
   font-weight:bold;
   text-decoration: none;
 }
+a.showhideplain {
+  text-decoration: none;
+}
 a.showhidehint {
   font-weight: lighter;
   text-decoration: underline;

@@ -11,7 +11,7 @@
 
 
 
-<title>Spatial Analysis with R Exercise 1: Basic R Operations</title>
+<title>Spatial Data Analysis with R Exercise 1: Basic R Operations</title>
 
 <script src="lib/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -180,8 +180,8 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore"><span class="ex-title">Spatial Analysis with R</span><br/><span class="ex-subtitle">Exercise 1: Basic R Operations</span></h1>
-<h4 class="date"><em>Fall 2018</em></h4>
+<h1 class="title toc-ignore"><span class="ex-title">Spatial Data Analysis with R</span><br/><span class="ex-subtitle">Exercise 1: Basic R Operations</span></h1>
+<h4 class="date"><em>BayGeo, Fall 2018</em></h4>
 
 </div>
 
@@ -249,11 +249,11 @@ see <tt>runif()</tt>
 <pre class="r"><code>## runif() returns random numbers from 0 to 1, so if we multiply those values by 100 the 
 ## result will be numbers from 0 to 100.
 runif(n=10) * 100</code></pre>
-<pre><code>##  [1] 95.336935 76.757003 40.317346 76.120718 17.988254 98.745617 81.564443
-##  [8] 36.126063 35.044276  2.321604</code></pre>
+<pre><code>##  [1] 83.970315 63.884979 47.193612  6.997019 34.093713 38.456997 11.625104
+##  [8] 40.272682 69.551185  1.199918</code></pre>
 <pre class="r"><code>## If you prefer integers, the sample() function would work also
 sample(1:100, size=10)</code></pre>
-<pre><code>##  [1] 83 14 46 41 23 33 29 55 79 68</code></pre>
+<pre><code>##  [1] 43 11 45 13 53 85  9 35 96 74</code></pre>
 </div>
 <p><a href="#" class="showhidelink" onclick="showHide('q6');return false;"># 6.</a> Create a variable called <em>y</em>, and assign it ten randomly selected valuesof TRUE<br />
 #  or FALSE (equal weights). Find out how many elements are TRUE.</p>
@@ -263,13 +263,13 @@ sample(1:100, size=10)</code></pre>
 ## There are a few ways to count up the number of &#39;TRUE&#39;s
 summary(y)</code></pre>
 <pre><code>##    Mode   FALSE    TRUE 
-## logical       3       7</code></pre>
+## logical       4       6</code></pre>
 <pre class="r"><code>sum(y)</code></pre>
-<pre><code>## [1] 7</code></pre>
+<pre><code>## [1] 6</code></pre>
 <pre class="r"><code>table(y)</code></pre>
 <pre><code>## y
 ## FALSE  TRUE 
-##     3     7</code></pre>
+##     4     6</code></pre>
 </div>
 <p><a href="#" class="showhidelink" onclick="showHide('q7');return false;"># 7.</a> Create a character variable called <em>h</em>, and assign it the individual lowercase letters of the alphabet.</p>
 <div id="q7" class="answer-code">

@@ -9,7 +9,7 @@
   <meta name="author" content="R Syntax" />
   <meta name="copyright" content="<span class='footer-right'><a href='acknowledgements.html'>Acknowledgements</a></span><span class='footer-right'><a href='../index.html'>Course Homepage</a></span><span class='footer-right'>Etherpad:&nbsp<a href=' https://is.gd/rspatial_baygeo_f18 ' target='_blank'> https://is.gd/rspatial_baygeo_f18 </a></span><span class='footer-subtitle'>Spatial Data Analysis in R</span>"/>
   <meta name="font-size-adjustment" content="2"/>
-  <title>Week 1:  Spatial Data Analysis with R  October 4, 2018</title>
+  <title>Spatial Data Analysis with R October 4, 2018</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -116,7 +116,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title"><span class="pres-date">Week 1: </span><br/><span class="pres-subtitle">Spatial Data Analysis with R</span> <br/><span class="pres-date">October 4, 2018</span></h1>
+  <h1 class="title"><span class="pres-subtitle">Spatial Data Analysis with R</span><br/><span class="pres-date">October 4, 2018</span></h1>
   <p class="author">
 <span class="pres-title">R Syntax</span>
   </p>
@@ -128,7 +128,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>pi <span class="co"># multiply by a constant</span></code></pre></div>
 <pre><code>## [1] 6.283185</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">7</span> <span class="op">+</span><span class="st"> </span><span class="kw">runif</span>(<span class="dv">1</span>) <span class="co"># add a random number</span></code></pre></div>
-<pre><code>## [1] 7.703493</code></pre>
+<pre><code>## [1] 7.839703</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">3</span><span class="op">^</span><span class="dv">4</span> <span class="co"># powers</span></code></pre></div>
 <pre><code>## [1] 81</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">4</span><span class="op">^</span><span class="dv">4</span>) <span class="co"># functions</span></code></pre></div>
@@ -161,7 +161,7 @@ flv</code></pre></div>
 <pre><code>## [1] &quot;vanilla&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">start_date &lt;-<span class="st"> </span><span class="kw">Sys.Date</span>()
 start_date</code></pre></div>
-<pre><code>## [1] &quot;2018-10-02&quot;</code></pre>
+<pre><code>## [1] &quot;2018-10-04&quot;</code></pre>
 <h2 id="naming-variables">Naming Variables</h2>
 <p>The rules for naming variables are pretty flexible. You can use numbers, letters, and most special characters. There are a couple of rules to take note of:</p>
 <div class="indented2">
@@ -251,7 +251,7 @@ SignatureMethod
 nums &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">1.1</span>, <span class="dv">3</span>, <span class="op">-</span><span class="fl">5.7</span>)
 devs &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">5</span>)
 devs</code></pre></div>
-<pre><code>## [1]  0.5862584  1.7639652  0.2994436  0.5154034 -0.8723488</code></pre>
+<pre><code>## [1]  0.3553860 -1.4760131 -0.2935001 -0.2462953 -2.2571553</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## integer vector
 ints &lt;-<span class="st"> </span><span class="kw">c</span>(1L, 5L, <span class="op">-</span>3L) <span class="co"># force storage as integer not decimal number</span>
 ## &#39;L&#39; is for &#39;long integer&#39; (historical)
@@ -302,7 +302,7 @@ depts</code></pre></div>
 <span class="kw">table</span>(x)</code></pre></div>
 <pre><code>## x
 ##   0   1   2   3   4   5   6   7   8   9  10 
-##  50 105  99  93  98  96 102  94  99 109  55</code></pre>
+##  39  89  87  84 110 104 118 126  98  93  52</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000</span>)
 <span class="kw">hist</span>(x)</code></pre></div>
 <p><img src="part01b_rsyntax_files/figure-slidy/unnamed-chunk-7-1.png" width="768" /></p>

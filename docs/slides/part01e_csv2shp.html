@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Converting a CSV to SpatialPoints" />
+  <meta name="copyright" content="<span class='footer-right'><a href='acknowledgements.html'>Acknowledgements</a></span><span class='footer-right'><a href='../index.html'>Course Homepage</a></span><span class='footer-right'>Etherpad:&nbsp<a href=' https://is.gd/rspatial_baygeo_f18 ' target='_blank'> https://is.gd/rspatial_baygeo_f18 </a></span><span class='footer-subtitle'>Spatial Data Analysis in R</span>"/>
+  <meta name="font-size-adjustment" content="2"/>
+  <title>Week 1:  Spatial Data Analysis with R  October 4, 2018</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACkUlEQVQ4jX2SW0jTcRTHTzNyeZlh6lqmm3POdNPC6SxSEzaqafkykOFoIxTDWpKRFV6iQMNLFyMSsQvUW0WORc2WWBmGKEGZXUyz0NrmNmfa1PYgfHsQ1v5oHjgvX875/M45vy/R8mDJ9caxrFIL5CUWJB00Q9n+7Q+l1BetUMuMTL3JpTB0QVnejd1Hu9DQ60G5eQbqB7PIvj0L2bUZ0KZzghWbs0o7Fx3Tc/B6vStm6+g0wrQvIKh2gKKyUxnNSZoO685SC1YDeL1e9Ll+Ia7WCd5pJ4hojQ8g1nViezETYBqZx93BOdwa9jAgsdUT4J6ZQqC6f4GIiLYU9/RzNWYIdU9hd/8rLjN7UGT8DbWROVVMlQsBBWas142DiIikdfbFMF0POIVm2NzM1zwLS+mvcSsnEajpBSv/8RIgucGJ1EYXEs+NwjrlWfUGMee/Y2PFJIJLrFibex8kOsahhCYnUlpnIL1kh9X9/yMKG2yIOOlAsPYnAveZsE75EEQUQLwTwy5Rsxvx9UxApKEPEYY+BiSizA623oaggkdgq4xLKwRLq7i8sy6EFlpg8wNEVwyAd3wAbZ8cPu3CazeCC/sRojYjaL8Jvm8MPWLDBm03A8CveQ9+7RBia4cYU4QfeokwzTOwc6/4OzKXHap/C5ufD0RNo0i4OAZR81dcnnD69Mp3PxBe9GRkuZdFKk7sqTcQ132EpGUMydetSLnpgOSGHVtbxpHU9AX8mkFEG55/ZrjQL1h82V6esPLVh8Sr40i940J6xzzS7s1C0m6HqHEEiTnatgT5gcPijHxltFwhjpRIQpZjBAJ2lFTBFW5TiOPT8mXx6apdcRl5OaJM1Q6hLC9ls3RPTLgok0NELCKiv02kPqt/O1MZAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon" />
+  <script language="javascript" type="text/javascript">
+  function TriShowHide(shID) {
+    shIDspan = shID + "span";
+    shIDdiv = shID + "div";
+    if (document.getElementById(shIDdiv).style.display != 'block') {
+      document.getElementById(shIDdiv).style.display = 'block';
+      txtSpan = "&#9660;";
+    } else {
+      document.getElementById(shIDdiv).style.display = 'none';
+      txtSpan = "&#9654;";
+    }
+    document.getElementById(shIDspan).innerHTML = txtSpan + " ";
+  }
+  function showHide(shID) {
+    if (shID=="soln-show-all") {
+      var allAnswerCode = document.getElementsByClassName("answer-code");
+      for (i = 0; i < allAnswerCode.length; i++) {
+          allAnswerCode[i].style.display = 'block';
+      }
+    } else if (shID=="soln-hide-all") {
+      var allAnswerCode = document.getElementsByClassName("answer-code");
+      for (i = 0; i < allAnswerCode.length; i++) {
+          allAnswerCode[i].style.display = 'none';
+      }
+    } else if (shID=="hints-show-all") {
+      var allAnswerCode = document.getElementsByClassName("hint");
+      for (i = 0; i < allAnswerCode.length; i++) {
+          allAnswerCode[i].style.display = 'block';
+      }
+    } else if (shID=="hints-hide-all") {
+      var allAnswerCode = document.getElementsByClassName("hint");
+      for (i = 0; i < allAnswerCode.length; i++) {
+          allAnswerCode[i].style.display = 'none';
+      }
+    } else {
+      if (document.getElementById(shID)) {
+        if (document.getElementById(shID).style.display != 'block') {
+          document.getElementById(shID).style.display = 'block';
+        } else {
+          document.getElementById(shID).style.display = 'none';
+        }
+      }
+    }
+  }
+  function CopyToClipboard(containerid) {
+  if (document.selection) { 
+      var range = document.body.createTextRange();
+      range.moveToElementText(document.getElementById(containerid));
+      range.select().createTextRange();
+      document.execCommand("copy"); 
+  } else if (window.getSelection) {
+      var range = document.createRange();
+      range.selectNode(document.getElementById(containerid));
+      window.getSelection().addRange(range);
+      document.execCommand("copy");
+      // alert("text copied") 
+  }}
+  </script>
+  <link href="lib/slidy-2/styles/slidy.css" rel="stylesheet" />
+  <script src="lib/slidy-2/scripts/slidy.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="..\css\slidy_styles.css" />
+  <meta name="duration" content="0" />
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title"><span class="pres-date">Week 1: </span><br/><span class="pres-subtitle">Spatial Data Analysis with R</span> <br/><span class="pres-date">October 4, 2018</span></h1>
+  <p class="author">
+<span class="pres-title">Converting a CSV to SpatialPoints</span>
+  </p>
+</div>
+<div id="sp-package" class="slide section level1">
+<h1><code>sp</code> package</h1>
+<p> </p>
+<h2 id="spatial-data-classes-from-the-sp-package">Spatial Data Classes from the <code>sp</code> package</h2>
+<div class="indented1">
+<p><strong>Vector data classes</strong></p>
+<p><code>SpatialPoints, SpatialPointsDataFrame</code></p>
+<p><code>SpatialLines, SpatialLinesDataFrame</code></p>
+<p><code>SpatialPolygons, SpatialPolygonsDataFrame</code></p>
+<p><strong>Raster classes</strong></p>
+<p><code>SpatialPixels</code></p>
+<p><code>SpatialGrid</code></p>
+</div>
+<div class="textbox">
+<p>To see all data classes that inherit from ‘Spatial’, run <code>getClass('Spatial')</code></p>
+</div>
+<h2 id="spatial-data-classes"><tt>Spatial*</tt> Data Classes</h2>
+<div class="indented2">
+<ul>
+<li>all sp* objects store <em>projection info</em></li>
+<li>it’s relatively easy to <em>convert</em> data types within and between packages</li>
+<li>standard <em>data frame syntax</em> will often work with sp* objects</li>
+<li>many spatial analysis packages take sp* objects <em>directly</em> or have conversion functions</li>
+</ul>
+</div>
+<p><strong>SpatialPoints</strong></p>
+<div class="indented2">
+<div class="figure">
+<img src="images/spatialpoints_781x415.png" />
+
+</div>
+<div class="figure">
+<img src="images/spatialpointsdataframe_781x415.png" />
+
+</div>
+</div>
+</div>
+<div id="getting-or-setting-the-crs" class="slide section level1">
+<h1>Getting or Setting the CRS</h1>
+<p>All data classes from the <em>sp</em> and <em>raster</em> packages have a <code>proj4string</code> slot</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sf_nb<span class="op">@</span>proj4string</code></pre></div>
+<pre><code>## CRS arguments: +proj=longlat +ellps=WGS84 +no_defs</code></pre>
+</div>
+<div id="csv-to-spatialpoints" class="slide section level1">
+<h1>CSV to SpatialPoints*</h1>
+<p>Point data is commonly saved in CSV files. Let’s look how we would import that into R, convert it to a SpatialPoints object, and then plot it. We’ll use a CSV file that for the schools in San Francisco.</p>
+<p>First, we import the CSV file.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sf_schls_df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;../docs/data/sf_schools.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+<span class="kw">names</span>(sf_schls_df)</code></pre></div>
+<pre><code>##  [1] &quot;Campus.Name&quot;         &quot;CCSF.Entity&quot;         &quot;Lower.Grade&quot;        
+##  [4] &quot;Upper.Grade&quot;         &quot;Grade.Range&quot;         &quot;Category&quot;           
+##  [7] &quot;Map.Label&quot;           &quot;Lower.Age&quot;           &quot;Upper.Age&quot;          
+## [10] &quot;General.Type&quot;        &quot;CDS.Code&quot;            &quot;Campus.Address&quot;     
+## [13] &quot;Supervisor.District&quot; &quot;County.FIPS&quot;         &quot;County.Name&quot;        
+## [16] &quot;Lat&quot;                 &quot;Long&quot;</code></pre>
+<p>We need to find which columns contain the latitude and longitude. We can guess by the name.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sf_schls_df[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="kw">c</span>(<span class="st">&quot;Campus.Name&quot;</span>, <span class="st">&quot;Category&quot;</span>, <span class="st">&quot;Lat&quot;</span>, <span class="st">&quot;Long&quot;</span>)]</code></pre></div>
+<pre><code>##                                                                          Campus.Name
+## 1                                                            Alamo Elementary School
+## 2                                                         Alvarado Elementary School
+## 3                                                                Aptos Middle School
+## 4                                                     Argonne Early Education School
+## 5                                                          Argonne Elementary School
+## 6  Asawa, Ruth Asawa San Francisco School Of The Arts - Academy Of Arts And Sciences
+## 7                                                                 Balboa High School
+## 8                                               Brown, Willie Brown Jr Middle School
+## 9                                         Bryant Early Education / Bryant Elementary
+## 10                                                         Buena Vista / Horace Mann
+##                  Category      Lat      Long
+## 1          USD Grades K-5 37.78300 -122.4823
+## 2          USD Grades K-5 37.75368 -122.4382
+## 3          USD Grades 6-8 37.72967 -122.4658
+## 4             USD PreK/TK 37.77397 -122.4741
+## 5          USD Grades K-5 37.77531 -122.4763
+## 6         USD Grades 9-12 37.74532 -122.4488
+## 7         USD Grades 9-12 37.72114 -122.4414
+## 8          USD Grades 6-8 37.73648 -122.3996
+## 9  USD PreK-5, Grades K-5 37.75145 -122.4047
+## 10         USD Grades K-8 37.75303 -122.4202</code></pre>
+<p>We’ll discuss the details more next time, but we can convert this data frame to a SpatialPoints object using a function from the sp package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sf_schls_sp &lt;-<span class="st"> </span>sp<span class="op">::</span><span class="kw">SpatialPoints</span>(sf_schls_df[ , <span class="kw">c</span>(<span class="st">&quot;Long&quot;</span>, <span class="st">&quot;Lat&quot;</span>)])
+<span class="kw">summary</span>(sf_schls_sp)</code></pre></div>
+<pre><code>## Object of class SpatialPoints
+## Coordinates:
+##             min        max
+## Long -122.50925 -122.36800
+## Lat    37.70912   37.82599
+## Is projected: NA 
+## proj4string : [NA]
+## Number of points: 445</code></pre>
+<p>Looks like we created it, but we have to record which CRS the locations are in.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">proj4string</span>(sf_schls_sp) &lt;-<span class="st"> </span><span class="kw">CRS</span>(<span class="st">&quot;+proj=longlat +datum=WGS84&quot;</span>)</code></pre></div>
+<p>Now we can plot them together.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(sf_nb, <span class="dt">axes=</span>T, <span class="dt">asp=</span><span class="dv">1</span>)
+<span class="kw">plot</span>(sf_schls_sp, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>)
+<span class="kw">plot</span>(sf_pot, <span class="dt">add=</span>T, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">pch=</span><span class="dv">16</span>)</code></pre></div>
+<p><img src="part01e_csv2shp_files/figure-slidy/plot_schools_cannibis-1.png" width="768" /></p>
+</div>
+<div id="on-your-own" class="slide section level1">
+<h1>On Your Own</h1>
+<p>Add the schools to your map of cannibis dispensaries.</p>
+</div>
+
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+</body>
+</html>

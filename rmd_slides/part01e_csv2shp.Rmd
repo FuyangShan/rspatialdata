@@ -1,0 +1,111 @@
+---
+title: "<span class='pres-date'>Week `r params$this_week`: </span><br/><span class='pres-subtitle'>`r load('../common/course_info.RData'); lstCI$course_title`</span> <br/><span class='pres-date'>`r load('../common/course_info.RData'); lstCI[[paste0('class0', params$this_week)]]`</span>"
+author: "<span class='pres-title'>Converting a CSV to SpatialPoints</span>"
+output: 
+  slidy_presentation:
+params:
+    this_week: 1
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::knit_hooks$set(small.mar = function(before, options, envir) {
+    if (before) par(mar = c(2, 2, 0.5, 0.5))
+})
+library(rgdal, quietly = TRUE)
+sf_nb <- rgdal::readOGR("../docs/data", "sf_neighborhoods")
+fn <- "../docs/data/sf_permitted_cannabis_dispensaries_2014.kml"
+sf_pot <- rgdal::readOGR(fn, "Cannabis Dispensaries 2014")
+```
+
+# ```sp``` package
+&nbsp;
+
+## Spatial Data Classes from the ```sp``` package
+
+<div class="indented1">
+__Vector data classes__
+
+```SpatialPoints, SpatialPointsDataFrame```
+
+```SpatialLines, SpatialLinesDataFrame```
+
+```SpatialPolygons, SpatialPolygonsDataFrame```
+
+__Raster classes__
+
+```SpatialPixels```
+
+```SpatialGrid```
+</div>
+
+<div class="textbox">
+To see all data classes that inherit from 'Spatial', run ```getClass('Spatial')```
+</div>
+
+## <tt>Spatial*</tt> Data Classes
+
+<div class="indented2">
+- all sp* objects store _projection info_
+- it's relatively easy to _convert_ data types within and between packages
+- standard _data frame syntax_ will often work with sp* objects
+- many spatial analysis packages take sp* objects _directly_ or have conversion functions
+</div>
+
+__SpatialPoints__
+
+<div class="indented2">
+![](images/spatialpoints_781x415.png)
+
+![](images/spatialpointsdataframe_781x415.png)
+</div>
+
+
+# Getting or Setting the CRS  
+
+All data classes from the _sp_ and _raster_ packages have a ```proj4string``` slot
+
+```{r projslot}
+sf_nb@proj4string
+```
+
+# CSV to SpatialPoints*
+
+Point data is commonly saved in CSV files. Let's look how we would import that into R, convert it to a SpatialPoints object, and then plot it. We'll use a CSV file that for the schools in San Francisco.
+
+First, we import the CSV file.
+
+```{r import_sf_schools}
+sf_schls_df <- read.csv("../docs/data/sf_schools.csv", stringsAsFactors = FALSE)
+names(sf_schls_df)
+```
+
+We need to find which columns contain the latitude and longitude. We can guess by the name.
+
+```{r }
+sf_schls_df[1:10, c("Campus.Name", "Category", "Lat", "Long")]
+```
+
+We'll discuss the details more next time, but we can convert this data frame to a SpatialPoints object using a function from the sp package:
+
+```{r schools_sp}
+sf_schls_sp <- sp::SpatialPoints(sf_schls_df[ , c("Long", "Lat")])
+summary(sf_schls_sp)
+```
+Looks like we created it, but we have to record which CRS the locations are in.
+
+```{r save_crs}
+proj4string(sf_schls_sp) <- CRS("+proj=longlat +datum=WGS84")
+```
+
+Now we can plot them together.
+
+```{r plot_schools_cannibis, cache=TRUE}
+plot(sf_nb, axes=T, asp=1)
+plot(sf_schls_sp, add=T, col="green", pch=16)
+plot(sf_pot, add=T, col="red", pch=16)
+```
+
+# On Your Own
+
+Add the schools to your map of cannibis dispensaries. 

@@ -11,7 +11,7 @@
 
 
 
-<title>Spatial Analysis with R: Exercise 3: Import and Plot Spatial Data</title>
+<title>Spatial Data Analysis with R Exercise 3: Import and Plot Spatial Data</title>
 
 <script src="lib/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -180,8 +180,8 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore"><span class="ex-title">Spatial Analysis with R:</span><br/><span class="ex-subtitle">Exercise 3: Import and Plot Spatial Data</span></h1>
-<h4 class="date"><em>Fall 2018</em></h4>
+<h1 class="title toc-ignore"><span class="ex-title">Spatial Data Analysis with R</span><br/><span class="ex-subtitle">Exercise 3: Import and Plot Spatial Data</span></h1>
+<h4 class="date"><em>BayGeo, Fall 2018</em></h4>
 
 </div>
 
@@ -204,9 +204,13 @@ Copy questions
 </button>
 </div>
 <div id="qtn_div" class="ex-qtn">
-<p>############################<br/>#### <strong>IMPORT A SHAPEFILE</strong> ####<br/>############################</p>
-<p><a id="qtn_zizsuk" href="#" class="showhidelink" onclick="showHide('zizsuk');return false;"># 1.</a> The <em>exercises/data</em> folder contains a Shapefile of neighborhoods in San<br />
-#  Francisco (<a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/Analysis-Neighborhoods/p5b7-5n3h" target="_blank">source</a>). Import and plot it. How many neighborhoods are there?</p>
+<p>#####################################<br/>#### <strong>IMPORT AND PLOT A SHAPEFILE</strong> ####<br/>#####################################</p>
+<p><a id="qtn_zizsuk" href="#" class="showhidelink" onclick="showHide('zizsuk');return false;"># 1.</a> The <em>data</em> folder contains a Shapefile of neighborhoods in San Francisco (<a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/Analysis-Neighborhoods/p5b7-5n3h" target="_blank">source</a>).<br />
+#  Import it. Look at the attribute table. How many neighborhoods are there? <a href="#" class="showhidehint" onclick="showHide('vqmbij');return false;"></a></p>
+<div id="vqmbij" class="hint">
+<p>Remember that R requires forward slashes in path names. Therefore <code>c:\temp</code> is wrong, but <code>c:/temp</code> will work).<br />
+The <code>~</code> character returns your 'home directory', which is usually <em>My Documents</em>. If you unzipped your data files to <em>My Documents</em>, you can get it with &quot;~/data&quot;. Try: <code>file.exists(&quot;~/data&quot;)</code></p>
+</div>
 <div id="zizsuk" class="answer-code">
 <pre class="r"><code>library(rgdal, quietly = TRUE)
 sf_nb &lt;- rgdal::readOGR(&quot;../docs/data&quot;, &quot;sf_neighborhoods&quot;)</code></pre>
@@ -214,16 +218,27 @@ sf_nb &lt;- rgdal::readOGR(&quot;../docs/data&quot;, &quot;sf_neighborhoods&quot
 ## Source: &quot;C:\Workshops\R-Spatial\RSpatial_FourDay\rspatialdata\docs\data&quot;, layer: &quot;sf_neighborhoods&quot;
 ## with 41 features
 ## It has 1 fields</code></pre>
-<pre class="r"><code>plot(sf_nb, axes=T, asp=1)</code></pre>
-<p><img src="ex03_import_plot_files/figure-html/import_nb-1.png" width="672" /></p>
+<pre class="r"><code>head(sf_nb@data)</code></pre>
+<pre><code>##                            nhood
+## 0          Bayview Hunters Point
+## 1                 Bernal Heights
+## 2            Castro/Upper Market
+## 3                      Chinatown
+## 4                      Excelsior
+## 5 Financial District/South Beach</code></pre>
 <pre class="r"><code>nrow(sf_nb)</code></pre>
 <pre><code>## [1] 41</code></pre>
 <p>⇒ there are 41 neighborhoods.</p>
 </div>
+<p><a id="qtn_vqmbij2" href="#" class="showhidelink" onclick="showHide('vqmbij2');return false;"># 2.</a> Plot the neighborhoods. What coordinate reference system (CRS) are the data in?</p>
+<div id="vqmbij2" class="answer-code">
+<pre class="r"><code>plot(sf_nb, axes=T, asp=1)</code></pre>
+<p><img src="ex03_import_plot_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>By the looks of it, the data are in geographic coordinates (unprojected).</p>
+</div>
 <p>######################<br/>#### <strong>IMPORT A KML</strong> ####<br/>######################</p>
-<p><a id="qtn_wvnipb" href="#" class="showhidelink" onclick="showHide('wvnipb');return false;"># 2.</a> The <em>exercises/data</em> folder contains a KML file with permitted cannabis<br />
-#  dispensaries as of 2014 (<a href="https://data.sfgov.org/Health-and-Social-Services/Permitted-Medical-Cannabis-Dispensaries/46p7-cb56" target="_blank">source</a>). Import and plot it over the neighborhood<br />
-#  boundaries. <a href="#" class="showhidehint" onclick="showHide('mqepye');return false;"></a></p>
+<p><a id="qtn_wvnipb" href="#" class="showhidelink" onclick="showHide('wvnipb');return false;"># 3.</a> The <em>data</em> folder contains a KML file with permitted cannabis dispensaries as<br />
+#  of 2014 (<a href="https://data.sfgov.org/Health-and-Social-Services/Permitted-Medical-Cannabis-Dispensaries/46p7-cb56" target="_blank">source</a>). Import and plot it over the neighborhood boundaries. <a href="#" class="showhidehint" onclick="showHide('mqepye');return false;"></a></p>
 <div id="mqepye" class="hint">
 Remember to use the <tt>add=TRUE</tt> argument to overlay features on an existing plot.
 </div>
@@ -247,11 +262,11 @@ file.exists(fn)</code></pre>
 plot(sf_pot, add=T, col=&quot;red&quot;, pch=16)</code></pre>
 <p><img src="ex03_import_plot_files/figure-html/plot_pot-1.png" width="672" /></p>
 </div>
-<p><a id="qtn_cbaddd" href="#" class="showhidelink" onclick="showHide('cbaddd');return false;"># 3.</a> How many permitted cannabis dispensaries are in the city?</p>
+<p><a id="qtn_cbaddd" href="#" class="showhidelink" onclick="showHide('cbaddd');return false;"># 4.</a> How many permitted cannabis dispensaries are in the city?</p>
 <div id="cbaddd" class="answer-code">
-<pre class="r"><code>nrow(sf_nb)</code></pre>
-<pre><code>## [1] 41</code></pre>
-<p>⇒ there were 41 cannabis dispensaries as of 2014.</p>
+<pre class="r"><code>nrow(sf_pot)</code></pre>
+<pre><code>## [1] 28</code></pre>
+<p>⇒ there were 28 cannabis dispensaries as of 2014.</p>
 </div>
 </div>
 </div>

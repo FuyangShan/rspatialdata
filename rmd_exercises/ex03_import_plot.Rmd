@@ -1,6 +1,6 @@
 ---
-title: "<span class='ex-title'>Spatial Analysis with R:</span><br/><span class='ex-subtitle'>Exercise 3: Import and Plot Spatial Data</span>"
-date: "`r load('../common/course_info.RData'); lstCI$course`"
+title: "<span class='ex-title'>`r load('../common/course_info.RData'); lstCI$course_title`</span><br/><span class='ex-subtitle'>Exercise 3: Import and Plot Spatial Data</span>"
+date: "`r lstCI$course_sub`"
 output: html_document
 ---
 
@@ -18,15 +18,21 @@ library(rgdal)
 <div class="copy-button"><button onclick="CopyToClipboard('qtn_div');return false;">Copy questions</button></div>
 <div id="qtn_div" class="ex-qtn">
 
-`r hashtitle("IMPORT A SHAPEFILE")`
+`r hashtitle("IMPORT AND PLOT A SHAPEFILE")`
 
-<a id="qtn_zizsuk" href="#" class="showhidelink" onclick="showHide('zizsuk');return false;">\# `r auton()`</a> `r chop("The *exercises/data* folder contains a Shapefile of neighborhoods in San Francisco ([source](https://data.sfgov.org/Geographic-Locations-and-Boundaries/Analysis-Neighborhoods/p5b7-5n3h){target=\"_blank\"}). Import and plot it. How many neighborhoods are there?")`  
+<a id="qtn_zizsuk" href="#" class="showhidelink" onclick="showHide('zizsuk');return false;">\# `r auton()`</a> `r chop("The *data* folder contains a Shapefile of neighborhoods in San Francisco ([source](https://data.sfgov.org/Geographic-Locations-and-Boundaries/Analysis-Neighborhoods/p5b7-5n3h){target=\"_blank\"}). Import it. Look at the attribute table. How many neighborhoods are there?")` <a href="#" class="showhidehint" onclick="showHide('vqmbij');return false;"></a>  
+
+<div id="vqmbij" class="hint">
+Remember that R requires forward slashes in path names. Therefore `c:\temp` is wrong, but `c:/temp` will work).  
+The ```~``` character returns your 'home directory', which is usually *My Documents*. If you unzipped your data files to *My Documents*, you can get it with "~/data". Try: `file.exists("~/data")`
+</div>
+  
 
 <div id="zizsuk" class="answer-code">
 ```{r import_nb, small.mar=TRUE, cache=TRUE}
 library(rgdal, quietly = TRUE)
 sf_nb <- rgdal::readOGR("../docs/data", "sf_neighborhoods")
-plot(sf_nb, axes=T, asp=1)
+head(sf_nb@data)
 nrow(sf_nb)
 ```
 
@@ -34,9 +40,21 @@ nrow(sf_nb)
 
 </div>
 
+<a id="qtn_vqmbij2" href="#" class="showhidelink" onclick="showHide('vqmbij2');return false;">\# `r auton()`</a> `r chop("Plot the neighborhoods. What coordinate reference system (CRS) are the data in?")`  
+
+<div id="vqmbij2" class="answer-code">
+```{r}
+plot(sf_nb, axes=T, asp=1)
+```
+
+By the looks of it, the data are in geographic coordinates (unprojected).
+
+</div>
+
+
 `r hashtitle("IMPORT A KML")`
 
-<a id="qtn_wvnipb" href="#" class="showhidelink" onclick="showHide('wvnipb');return false;">\# `r auton()`</a> `r chop("The *exercises/data* folder contains a KML file with permitted cannabis dispensaries as of 2014 ([source](https://data.sfgov.org/Health-and-Social-Services/Permitted-Medical-Cannabis-Dispensaries/46p7-cb56){target=\"_blank\"}). Import and plot it over the neighborhood boundaries.")`  <a href="#" class="showhidehint" onclick="showHide('mqepye');return false;"></a>  
+<a id="qtn_wvnipb" href="#" class="showhidelink" onclick="showHide('wvnipb');return false;">\# `r auton()`</a> `r chop("The *data* folder contains a KML file with permitted cannabis dispensaries as of 2014 ([source](https://data.sfgov.org/Health-and-Social-Services/Permitted-Medical-Cannabis-Dispensaries/46p7-cb56){target=\"_blank\"}). Import and plot it over the neighborhood boundaries.")`  <a href="#" class="showhidehint" onclick="showHide('mqepye');return false;"></a>  
 
 <div id="mqepye" class="hint">Remember to use the <tt>add=TRUE</tt> argument to overlay features on an existing plot.</div>
 
@@ -56,9 +74,9 @@ plot(sf_pot, add=T, col="red", pch=16)
 
 <div id="cbaddd" class="answer-code">
 ```{r}
-nrow(sf_nb)
+nrow(sf_pot)
 ```
-&#8658; there were `r nrow(sf_nb)` cannabis dispensaries as of 2014.
+&#8658; there were `r nrow(sf_pot)` cannabis dispensaries as of 2014.
 </div>
 
 

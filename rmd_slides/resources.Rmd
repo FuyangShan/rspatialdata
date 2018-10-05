@@ -1,10 +1,11 @@
 ---
-title: "<span style='font-weight:bold;'><span style='color:#008040; font-size:75%;'>Spatial Data Analysis in R:</span><br/>Resources</span>"
+title: "<span style='font-weight:bold;'><span style='color:#008040; font-size:75%;'>`r load('../common/course_info.RData'); lstCI$course_title`</span><br/>Resources</span>"
 output: 
   html_document: 
     self_contained: no
     lib_dir: ../docs/slides/lib
 ---
+
 <style>
 ul {
   margin-left: 1em;
@@ -19,11 +20,9 @@ h2 {
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<span style="font-size:120%;color:darkred">Do you know of other resources? If so please add them to our   workshop Etherpad and they'll be added to this list.</span>
+<span style="font-size:120%;color:darkred">Do you know of other resources? If so please add them to our [workshop Etherpad](`r lstCI$etherpadfull`){target="_blank"} so we can add them to the list.</span>
 
 ### General R Tutorials
-
-[Try R Tutorial](http://tryr.codeschool.com/levels/1/challenges/1), Code School
 
 [R Basics](https://sejdemyr.github.io/r-tutorials/basics/), Simon Ejdemyr
 

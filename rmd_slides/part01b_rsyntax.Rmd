@@ -1,5 +1,5 @@
 ---
-title: "<span class='pres-date'>Week `r params$this_week`: </span><br/><span class='pres-subtitle'>Spatial Data Analysis with R</span> <br/><span class='pres-date'>`r load('../common/course_info.RData'); lstCI[[paste0('class0', params$this_week)]]`</span>"
+title: "<span class='pres-subtitle'>`r load('../common/course_info.RData'); lstCI$course_title`</span><br/><span class='pres-date'>`r lstCI[[paste0('class0', params$this_week)]]`</span>"
 author: "<span class='pres-title'>R Syntax</span>"
 output: 
   slidy_presentation:

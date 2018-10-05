@@ -7,7 +7,7 @@ output: html_document
 
 - If you haven't already, install [R](https://cran.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/download/). 
 
-- Download the <a href="https://ajlyons.github.io/rspatialdata/data.zip">data file</a> from the <a href="`r lstCI$githubrepo`" target="_blank">GitHub repo</a>, and unzip it to My Documents. 
+- Download the <a href="`r lstCI$datafile`">data file</a> from the <a href="`r lstCI$githubrepo`" target="_blank">GitHub repo</a>, and unzip it to My Documents. 
 
 - Create a new R script in RStudio (File &rarr; New File &rarr; R Script). 
 
